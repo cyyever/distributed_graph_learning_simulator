@@ -7,9 +7,7 @@ import torch
 from .session import Session
 
 
-def dump_analysis() -> None:
-    session_path = os.getenv("session_path")
-    assert session_path is not None
+def dump_analysis(session_path: str) -> None:
     session_path = session_path.strip()
     session = Session(session_path)
     config = session.config

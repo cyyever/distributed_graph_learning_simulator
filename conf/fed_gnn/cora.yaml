@@ -1,0 +1,3 @@
+---
+dataset_name: Cora
+defaults: [common, _self_]
