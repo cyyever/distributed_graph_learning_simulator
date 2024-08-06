@@ -12,9 +12,9 @@ python3 -m pip -r requirements.txt
 
 ## Our Works
 
-### FedAAS
+### Historical Embedding-Guided Efficient Large-Scale Federated Graph Learning
 
-To run the experiments of **Historical Embedding-Guided Efficient Large-Scale Federated Graph Learning**, use this command
+To run the experiments of [Historical Embedding-Guided Efficient Large-Scale Federated Graph Learning](https://dl.acm.org/doi/10.1145/3654947), use this command
 
 ```
 bash fed_aas.sh
