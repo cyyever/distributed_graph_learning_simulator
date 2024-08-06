@@ -6,8 +6,7 @@ from distributed_learning_simulation.config import (DistributedTrainingConfig,
                                                     import_dependencies)
 from distributed_learning_simulation.config import load_config as __load_config
 from distributed_learning_simulation.training import train
-
-import_dependencies(dataset_type=DatasetType.Graph)
+import cyy_torch_graph
 
 import method  # noqa: F401
 
