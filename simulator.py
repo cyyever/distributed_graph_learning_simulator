@@ -1,10 +1,13 @@
 import os
 
-import cyy_torch_graph  # noqa: F401
 import hydra
-from distributed_learning_simulation.config import DistributedTrainingConfig
+from cyy_torch_toolbox import DatasetType
+from distributed_learning_simulation.config import (DistributedTrainingConfig,
+                                                    import_dependencies)
 from distributed_learning_simulation.config import load_config as __load_config
 from distributed_learning_simulation.training import train
+
+import_dependencies(dataset_type=DatasetType.Graph)
 
 import method  # noqa: F401
 
