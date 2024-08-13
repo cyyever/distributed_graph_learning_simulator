@@ -1,0 +1,9 @@
+for configname in reddit.yaml; do
+  # fed_ais
+  for percent in 0.1 0.3 0.5 0.9; do
+    python3 ./simulator.py --config-name fed_ais/${configname} ++fed_ais.worker_number=100 ++fed_ais.round=100 ++fed_ais.model_name=TwoGATCN ++fed_ais.epoch=1 ++fed_ais.dataloader_kwargs.batch_number=10 ++fed_ais.learning_rate=0.001 ++fed_ais.weight_decay=0.001 ++fed_ais.exp_name="fed_ais" ++fed_ais.algorithm_kwargs.sample_percent=$percent ++fed_ais.algorithm_kwargs.min_sharing_interval=2 ++fed_ais.algorithm_kwargs.edge_drop_rate=0.5
+    python3 ./simulator.py --config-name fed_ais/${configname} ++fed_ais.worker_number=100 ++fed_ais.round=100 ++fed_ais.model_name=TwoGATCN ++fed_ais.epoch=1 ++fed_ais.dataloader_kwargs.batch_number=10 ++fed_ais.learning_rate=0.001 ++fed_ais.weight_decay=0.001 ++fed_ais.exp_name="fed_ais_random" ++fed_ais.algorithm_kwargs.sample_percent=$percent ++fed_ais.algorithm_kwargs.min_sharing_interval=2 ++fed_ais.algorithm_kwargs.edge_drop_rate=0.5 ++fed_ais.algorithm_kwargs.random_selection=true
+    python3 ./simulator.py --config-name fed_ais/${configname} ++fed_ais.worker_number=100 ++fed_ais.round=100 ++fed_ais.model_name=TwoGATCN ++fed_ais.epoch=1 ++fed_ais.dataloader_kwargs.batch_number=10 ++fed_ais.learning_rate=0.001 ++fed_ais.weight_decay=0.001 ++fed_ais.exp_name="fed_ais_periodic" ++fed_ais.algorithm_kwargs.sample_percent=$percent ++fed_ais.algorithm_kwargs.fixed_sharing_interval=2 ++fed_ais.algorithm_kwargs.edge_drop_rate=0.5
+    python3 ./simulator.py --config-name fed_ais/${configname} ++fed_ais.worker_number=100 ++fed_ais.round=100 ++fed_ais.model_name=TwoGATCN ++fed_ais.epoch=1 ++fed_ais.dataloader_kwargs.batch_number=10 ++fed_ais.learning_rate=0.001 ++fed_ais.weight_decay=0.001 ++fed_ais.exp_name="fed_ais_periodic1" ++fed_ais.algorithm_kwargs.sample_percent=$percent ++fed_ais.algorithm_kwargs.fixed_sharing_interval=1 ++fed_ais.algorithm_kwargs.edge_drop_rate=0.5
+  done
+done
