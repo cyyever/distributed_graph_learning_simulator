@@ -16,7 +16,6 @@ classifiers = [
 ]
 
 [tool.setuptools.package-dir]
-"distributed_graph_learning_simulator.conf"= "./conf"
 "distributed_graph_learning_simulator.method"= "./method"
 
 [project.urls]
@@ -24,6 +23,3 @@ Repository = "https://github.com/cyyever/distributed_graph_learning_simulator"
 
 [tool.pyright]
 include = ["method"]
-
-reportMissingImports = true
-reportMissingTypeStubs = true
