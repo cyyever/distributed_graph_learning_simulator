@@ -1,6 +1,7 @@
 import os
 
 import hydra
+import cyy_torch_graph  # noqa: F401
 from distributed_learning_simulation.config import DistributedTrainingConfig
 from distributed_learning_simulation.config import load_config as __load_config
 from distributed_learning_simulation.training import train
