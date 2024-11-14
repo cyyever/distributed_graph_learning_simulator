@@ -1,5 +1,2 @@
-ogb
-torch_geometric
-distributed_learning_simulation@git+ssh://git@github.com/cyyever/distributed_learning_simulation_lib.git@main
-cyy_torch_graph@git+ssh://git@github.com/cyyever/torch_graph.git@main
-pyg-lib@git+https://github.com/pyg-team/pyg-lib.git@master
+distributed_learning_simulation@git+https://git@github.com/cyyever/distributed_learning_simulation_lib.git@main
+cyy_torch_graph@git+https://git@github.com/cyyever/torch_graph.git@main
