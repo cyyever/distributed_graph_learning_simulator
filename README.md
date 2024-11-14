@@ -7,7 +7,7 @@ This is a simulator for distributed Graph Federated Learning on a single host. I
 This is a Python project. The third party dependencies are listed in **requirements.txt**. If you use pip, it should be easy to install:
 
 ```
-python3 -m pip -r requirements.txt
+python3 -m pip install . --user
 ```
 
 ## Our Works
