@@ -6,8 +6,11 @@ import torch.nn
 import torch.nn.functional as F
 from cyy_naive_lib.log import log_debug, log_error
 from cyy_torch_graph import GraphModelEvaluator
-from cyy_torch_toolbox import (ClassificationDatasetCollection, Executor,
-                               MachineLearningPhase)
+from cyy_torch_toolbox import (
+    ClassificationDatasetCollection,
+    Executor,
+    MachineLearningPhase,
+)
 from torch_geometric.utils import degree as degree_fun
 from torch_geometric.utils import k_hop_subgraph
 

@@ -2,8 +2,10 @@
 Cluster-GCN: An Efficient Algorithm for Training Deep and Large Graph Convolutional Networks
 """
 
-from distributed_learning_simulation import (AggregationServer,
-                                             CentralizedAlgorithmFactory)
+from distributed_learning_simulation import (
+    AggregationServer,
+    CentralizedAlgorithmFactory,
+)
 
 from .algorithm import FedClusterGCNAlgorithm
 from .worker import FedClusterGCNWorker

@@ -1,6 +1,8 @@
-from distributed_learning_simulation import (AggregationServer,
-                                             CentralizedAlgorithmFactory,
-                                             GraphAlgorithm)
+from distributed_learning_simulation import (
+    AggregationServer,
+    CentralizedAlgorithmFactory,
+    GraphAlgorithm,
+)
 
 from .worker import FedGNNWorker
 

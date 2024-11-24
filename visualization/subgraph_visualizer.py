@@ -6,8 +6,10 @@ import torch_geometric.data
 import torch_geometric.utils
 from cyy_torch_graph import GraphDatasetUtil
 from cyy_torch_toolbox import MachineLearningPhase
-from distributed_learning_simulation.config import (DistributedTrainingConfig,
-                                                    import_dependencies)
+from distributed_learning_simulation.config import (
+    DistributedTrainingConfig,
+    import_dependencies,
+)
 from distributed_learning_simulation.config import load_config as __load_config
 
 global_config: DistributedTrainingConfig = DistributedTrainingConfig()
@@ -38,7 +40,8 @@ if __name__ == "__main__":
         node_mask = (
             util.get_mask()[0].clone()
             | dc.get_dataset_util(phase=MachineLearningPhase.Validation)
-            .get_mask()[0].clone()
+            .get_mask()[0]
+            .clone()
         )
 
         # node_drop_rate = 0.5

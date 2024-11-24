@@ -2,9 +2,11 @@
 FedGCN: Convergence and Communication Tradeoffs in Federated Training of Graph Convolutional Networks
 """
 
-from distributed_learning_simulation import (AggregationServer,
-                                             CentralizedAlgorithmFactory,
-                                             GraphAlgorithm)
+from distributed_learning_simulation import (
+    AggregationServer,
+    CentralizedAlgorithmFactory,
+    GraphAlgorithm,
+)
 
 from .worker import FedGCNWorker
 

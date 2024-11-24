@@ -4,12 +4,16 @@ import networkx
 import torch
 import torch_geometric.data
 import torch_geometric.utils
-from cyy_naive_lib.log import get_logger
+from cyy_naive_lib.log import log_info, log_debug
 from cyy_torch_toolbox.concurrency import TorchProcessTaskQueue
 from distributed_learning_simulation import (
-    AggregationAlgorithm, CompositeAggregationAlgorithm,
-    GraphNodeEmbeddingPassingAlgorithm, GraphTopologyAlgorithm, Message,
-    PersonalizedFedAVGAlgorithm)
+    AggregationAlgorithm,
+    CompositeAggregationAlgorithm,
+    GraphNodeEmbeddingPassingAlgorithm,
+    GraphTopologyAlgorithm,
+    Message,
+    PersonalizedFedAVGAlgorithm,
+)
 
 
 def compute_shortest_paths(training_node_to_client, task, **kwargs) -> dict:
@@ -78,16 +82,16 @@ class GraphDistanceAlgorithm(GraphTopologyAlgorithm):
             assert isinstance(max_index, int)
             queue = TorchProcessTaskQueue(worker_num=20)
             queue.disable_logger()
-            get_logger().info("start queue")
+            log_info("start queue")
             queue.start(
                 worker_fun=functools.partial(
                     compute_shortest_paths, self._training_node_to_client
                 )
             )
-            get_logger().info("end queue")
+            log_info("end queue")
             cnt = 0
             for idx, client in enumerate(clients):
-                for client2 in clients[idx + 1:]:
+                for client2 in clients[idx + 1 :]:
                     cnt += 1
                     training_node_indices = self._training_node_indices[client].union(
                         self._training_node_indices[client2]
@@ -98,18 +102,18 @@ class GraphDistanceAlgorithm(GraphTopologyAlgorithm):
                     )
                     edge_mask = node_mask[edge_index[0]] & node_mask[edge_index[1]]
                     pair_edge_index = edge_index[:, edge_mask]
-                    get_logger().info("shape is %s", pair_edge_index.shape)
+                    log_info("shape is %s", pair_edge_index.shape)
                     queue.add_task(pair_edge_index)
                     while queue.has_data():
                         cnt -= 1
                         res = queue.get_data()
-                        get_logger().debug("get data ")
+                        log_debug("get data ")
                         assert res is not None
                         res = res[0]
                         self._client_distance |= res
             for _ in range(cnt):
                 res = queue.get_data()
-                get_logger().debug("get data ")
+                log_debug("get data ")
                 assert res is not None
                 res = res[0]
                 self._client_distance |= res

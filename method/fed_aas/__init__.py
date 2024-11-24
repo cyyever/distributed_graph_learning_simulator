@@ -3,8 +3,10 @@ Our work
 """
 
 from distributed_learning_simulation import (
-    CentralizedAlgorithmFactory, DifferentialPrivacyEmbeddingEndpoint,
-    GraphAlgorithm)
+    CentralizedAlgorithmFactory,
+    DifferentialPrivacyEmbeddingEndpoint,
+    GraphAlgorithm,
+)
 
 from .server import FedAASServer
 from .worker import FedAASWorker

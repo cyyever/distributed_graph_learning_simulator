@@ -4,11 +4,12 @@ import os
 import torch
 import torch_geometric.utils
 from cyy_torch_graph.dataset.partition import METIS
-from distributed_learning_simulation.algorithm.fed_avg_algorithm import \
-    FedAVGAlgorithm
+from distributed_learning_simulation.algorithm.fed_avg_algorithm import FedAVGAlgorithm
 from distributed_learning_simulation.algorithm.graph_algorithm import (
-    CompositeAggregationAlgorithm, GraphNodeEmbeddingPassingAlgorithm,
-    GraphTopologyAlgorithm)
+    CompositeAggregationAlgorithm,
+    GraphNodeEmbeddingPassingAlgorithm,
+    GraphTopologyAlgorithm,
+)
 from distributed_learning_simulation.message import Message
 
 

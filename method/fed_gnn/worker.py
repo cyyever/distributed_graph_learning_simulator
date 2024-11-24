@@ -2,8 +2,7 @@ from typing import Any
 
 from cyy_torch_toolbox import ExecutorHookPoint, MachineLearningPhase
 from distributed_learning_simulation import Message
-from distributed_learning_simulation.graph_worker import (
-    GraphWorker, NodeSelectionMixin)
+from distributed_learning_simulation.graph_worker import GraphWorker, NodeSelectionMixin
 
 
 class FedGNNWorker(GraphWorker, NodeSelectionMixin):

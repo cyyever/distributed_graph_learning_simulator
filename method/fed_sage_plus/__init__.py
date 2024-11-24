@@ -2,8 +2,7 @@
 Subgraph Federated Learning with Missing Neighbor Generation
 """
 
-from distributed_learning_simulation import (CentralizedAlgorithmFactory,
-                                             GraphAlgorithm)
+from distributed_learning_simulation import CentralizedAlgorithmFactory, GraphAlgorithm
 
 from .server import FedSagePlusServer
 from .worker import FedSagePlusWorker

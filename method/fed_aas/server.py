@@ -1,9 +1,8 @@
 import math
 from typing import Any
 
-from cyy_naive_lib.log import get_logger
-from distributed_learning_simulation import (AggregationServer,
-                                             ParameterMessageBase)
+from cyy_naive_lib.log import log_warning, log_info
+from distributed_learning_simulation import AggregationServer, ParameterMessageBase
 
 
 class FedAASServer(AggregationServer):
@@ -25,7 +24,7 @@ class FedAASServer(AggregationServer):
         )
         if fixed_sharing_interval is not None:
             result.other_data["sharing_interval"] = fixed_sharing_interval
-            get_logger().info("use fixed sharing_interval %s", fixed_sharing_interval)
+            log_info("use fixed sharing_interval %s", fixed_sharing_interval)
             return
         if result.is_initial:
             result.other_data["sharing_interval"] = self.last_interval
@@ -46,7 +45,7 @@ class FedAASServer(AggregationServer):
             "min_sharing_interval", 1
         )
         interval = max(interval, min_sharing_interval)
-        get_logger().warning(
+        log_warning(
             "init test loss is %s,last_interval is %s, interval is %s",
             init_test_loss,
             self.last_interval,
@@ -63,7 +62,7 @@ class FedAASServer(AggregationServer):
         last_to_second_test_loss = self.performance_stat[
             max(self.performance_stat.keys()) - 1
         ]["test_loss"]
-        get_logger().warning(
+        log_warning(
             "last test loss is %s,last to second test loss is %s",
             last_test_loss,
             last_to_second_test_loss,

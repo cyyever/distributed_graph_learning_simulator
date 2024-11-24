@@ -8,8 +8,10 @@ import torch_geometric.data
 import torch_geometric.utils
 from cyy_torch_graph import GraphDatasetUtil
 from cyy_torch_toolbox import MachineLearningPhase
-from distributed_learning_simulation.config import (DistributedTrainingConfig,
-                                                    import_dependencies)
+from distributed_learning_simulation.config import (
+    DistributedTrainingConfig,
+    import_dependencies,
+)
 from distributed_learning_simulation.config import load_config as __load_config
 
 global_config: DistributedTrainingConfig = DistributedTrainingConfig()
