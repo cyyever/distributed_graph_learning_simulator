@@ -30,7 +30,7 @@ if __name__ == "__main__":
     practitioners = global_config.create_practitioners()
     sub_training_node_indices = set()
     y = []
-    for practitioner_idx, practitioner in enumerate(practitioners):
+    for practitioner in practitioners:
         dc = practitioner.create_dataset_collection(global_config)
         util = dc.get_dataset_util(phase=MachineLearningPhase.Training)
         assert isinstance(util, GraphDatasetUtil)
