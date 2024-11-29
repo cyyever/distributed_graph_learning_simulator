@@ -4,7 +4,7 @@ import networkx
 import torch
 import torch_geometric.data
 import torch_geometric.utils
-from cyy_naive_lib.log import log_info, log_debug
+from cyy_naive_lib.log import log_debug, log_info
 from cyy_torch_toolbox.concurrency import TorchProcessTaskQueue
 from distributed_learning_simulation import (
     AggregationAlgorithm,

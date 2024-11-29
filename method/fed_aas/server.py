@@ -1,7 +1,7 @@
 import math
 from typing import Any
 
-from cyy_naive_lib.log import log_warning, log_info
+from cyy_naive_lib.log import log_info, log_warning
 from distributed_learning_simulation import AggregationServer, ParameterMessageBase
 
 

@@ -69,7 +69,7 @@ class ClusterAlgorithm(GraphTopologyAlgorithm):
             self.config.save_dir,
             "cluster.json",
         )
-        with open(cluster_path, "wt", encoding="utf8") as f:
+        with open(cluster_path, "w", encoding="utf8") as f:
             json.dump(cluster_allocation, f)
         other_training_node_indices: dict[int, set] = {}
         for worker_id, cluster_no in cluster_allocation.items():
