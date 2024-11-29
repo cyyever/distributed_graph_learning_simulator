@@ -67,6 +67,4 @@ class FedAASServer(AggregationServer):
             last_test_loss,
             last_to_second_test_loss,
         )
-        if last_test_loss >= last_to_second_test_loss:
-            return True
-        return False
+        return last_test_loss >= last_to_second_test_loss

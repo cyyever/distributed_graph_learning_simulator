@@ -122,10 +122,7 @@ class FedSagePlusModelEvaluator(GraphModelEvaluator):
                     if min_diff is None or diff < min_diff:
                         min_diff = diff
                 assert min_diff is not None
-                if l2_sum is None:
-                    l2_sum = min_diff
-                else:
-                    l2_sum = l2_sum + min_diff
+                l2_sum = min_diff if l2_sum is None else l2_sum + min_diff
         if l2_sum is not None:
             l2_sum = l2_sum / len([a for a in batch_mask_list if a])
         return l2_sum

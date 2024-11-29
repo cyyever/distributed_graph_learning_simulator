@@ -124,10 +124,7 @@ class GraphDistanceAlgorithm(GraphTopologyAlgorithm):
 
         worker_weights: dict = {}
         for (a, b), v in self._client_distance.items():
-            if len(v) > 1:
-                mean_distance = sum(v) / len(v)
-            else:
-                mean_distance = v
+            mean_distance = sum(v) / len(v) if len(v) > 1 else v
             if a not in worker_weights:
                 worker_weights[a] = {}
             if b not in worker_weights:
