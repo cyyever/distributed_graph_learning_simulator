@@ -1,4 +1,0 @@
-torch_geometric
-networkx
-ogb
-cyy_torch_graph@git+https://github.com/cyyever/torch_graph.git@main
