@@ -3,7 +3,7 @@ Our work
 """
 
 from distributed_learning_simulation import (
-    CentralizedAlgorithmFactory,
+    AlgorithmRepository,
     DifferentialPrivacyEmbeddingEndpoint,
     GraphAlgorithm,
 )
@@ -11,13 +11,13 @@ from distributed_learning_simulation import (
 from .server import FedAASServer
 from .worker import FedAASWorker
 
-CentralizedAlgorithmFactory.register_algorithm(
+AlgorithmRepository.register_algorithm(
     algorithm_name="fed_aas",
     client_cls=FedAASWorker,
     server_cls=FedAASServer,
     algorithm_cls=GraphAlgorithm,
 )
-CentralizedAlgorithmFactory.register_algorithm(
+AlgorithmRepository.register_algorithm(
     algorithm_name="fed_aas_dp",
     client_cls=FedAASWorker,
     server_cls=FedAASServer,

@@ -1,12 +1,12 @@
 from distributed_learning_simulation import (
     AggregationServer,
-    CentralizedAlgorithmFactory,
+    AlgorithmRepository,
     GraphAlgorithm,
 )
 
 from .worker import FedGNNWorker
 
-CentralizedAlgorithmFactory.register_algorithm(
+AlgorithmRepository.register_algorithm(
     algorithm_name="fed_gnn",
     client_cls=FedGNNWorker,
     server_cls=AggregationServer,
