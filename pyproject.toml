@@ -15,9 +15,11 @@ classifiers = [
   "Programming Language :: Python"
 ]
 
-dynamic = ["dependencies"]
-[tool.setuptools.dynamic]
-dependencies = {file = ["requirements.txt"]}
+dependencies = [
+  "distributed_learning_simulation@git+https://github.com/cyyever/distributed_learning_simulation_lib.git",
+  "cyy_torch_graph@git+https://github.com/cyyever/torch_graph.git@main"
+]
+
 
 
 [tool.setuptools.package-dir]
