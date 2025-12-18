@@ -1,32 +1,24 @@
-[build-system]
-requires = ["setuptools >= 63.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "distributed_graph_learning_simulator"
 version = "1.0"
+readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.12"
-readme = {file = "README.md", content-type = "text/markdown"}
+license = { text = "BSD License" }
 authors = [
-  {name = "cyy", email = "cyyever@outlook.com"},
+  { name = "cyy", email = "cyyever@outlook.com" },
 ]
-license = {text = "BSD License"}
-classifiers = [
-  "Programming Language :: Python"
-]
-
+classifiers = ["Programming Language :: Python"]
 dependencies = [
-  "distributed_learning_simulation@git+https://github.com/cyyever/distributed_learning_simulation_lib.git",
-  "cyy_torch_graph@git+https://github.com/cyyever/torch_graph.git@main"
+  "cyy_torch_graph@git+https://github.com/cyyever/torch_graph.git@main",
+  "distributed_learning_simulation@git+https://github.com/cyyever/distributed_learning_simulation_lib.git"
 ]
-
-
-
-[tool.setuptools.package-dir]
-"distributed_graph_learning_simulator.method"= "./method"
 
 [project.urls]
 Repository = "https://github.com/cyyever/distributed_graph_learning_simulator"
+
+[build-system]
+requires = ["setuptools >= 63.0"]
+build-backend = "setuptools.build_meta"
 
 [tool.ruff]
 target-version = "py312"
@@ -34,18 +26,20 @@ src = ["method"]
 
 [tool.ruff.lint]
 select = [
-    # pycodestyle
-    "E",
-    # Pyflakes
-    "F",
-    # pyupgrade
-    "UP",
-    # flake8-bugbear
-    "B",
-    # flake8-simplify
-    "SIM",
-    # isort
-    "I",
+  # pycodestyle
+  "E",
+  # Pyflakes
+  "F",
+  # pyupgrade
+  "UP",
+  # flake8-bugbear
+  "B",
+  # flake8-simplify
+  "SIM",
+  # isort
+  "I",
 ]
+ignore = ["F401", "E501", "F403"]
 
-ignore = ["F401","E501","F403"]
+[tool.setuptools.package-dir]
+"distributed_graph_learning_simulator.method" = "./method"
