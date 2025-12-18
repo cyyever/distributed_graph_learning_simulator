@@ -1,0 +1,9 @@
+---
+use_slow_performance_metrics: true
+use_amp: false
+model_name: TwoGCN
+distributed_algorithm: fed_ags
+dataloader_kwargs:
+  batch_number: 10
+  num_neighbor: 10
+round: 100

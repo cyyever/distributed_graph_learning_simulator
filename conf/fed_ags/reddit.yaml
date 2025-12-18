@@ -1,0 +1,12 @@
+---
+dataset_name: Reddit
+learning_rate: 0.001
+fake_weight_decay: 0.001
+worker_number: 100
+algorithm_kwargs:
+  total_epoch: 500
+  edge_drop_rate: 0.5
+  min_epoch: 1
+  warmup_rounds: 1
+  node_sample_percent: 0.7
+defaults: [common, _self_]
