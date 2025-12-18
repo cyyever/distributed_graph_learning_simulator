@@ -16,7 +16,7 @@ python3 -m pip install . --user
 
 To run the experiments of [Historical Embedding-Guided Efficient Large-Scale Federated Graph Learning](https://dl.acm.org/doi/10.1145/3654947), use this command
 
-```
+```bash
 bash fed_aas.sh
 ```
 
